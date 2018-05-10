@@ -1,0 +1,29 @@
+{
+  "name": "valsplat/harvest-php-client",
+  "type": "library",
+  "description": "A PHP Client for the Harvest V2 API",
+  "keywords": [ "api", "php", "harvest", "guzzle" ],
+  "homepage": "https://github.com/valsplat/harvest-php-client",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Bjorn Post",
+      "email": "bjorn@valsplat.nl"
+    },
+    {
+      "name": "Joris Leker",
+      "email": "joris@valsplat.nl"
+    }
+  ],
+  "require": {
+    "php": ">=7.1",
+    "guzzlehttp/guzzle": "~6.0"
+  },
+  "require-dev": {
+  },
+  "autoload": {
+    "psr-4": {
+      "Valsplat\\Harvest\\": "src/Valsplat/Harvest"
+    }
+  }
+}
