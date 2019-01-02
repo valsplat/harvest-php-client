@@ -14,6 +14,7 @@ class UserAssignment extends Entity
 
     protected $fillable = [
         'user_id',
+        'project_id',
         'is_active',
         'is_project_manager',
         'hourly_rate',
@@ -22,4 +23,12 @@ class UserAssignment extends Entity
 
     protected $endpoint = 'user_assignments/';
     protected $namespace = 'user_assignments';
+
+    public function getEndpoint() {
+        if (isset($this->project_id)) {
+            return sprintf('projects/%s/%s', $this->project_id, $this->endpoint);
+        } else {
+            return $this->endpoint;
+        }
+    }
 }

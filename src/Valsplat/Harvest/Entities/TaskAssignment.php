@@ -14,6 +14,7 @@ class TaskAssignment extends Entity
 
     protected $fillable = [
         'task_id',
+        'project_id',
         'is_active',
         'billable',
         'hourly_rate',
@@ -22,4 +23,12 @@ class TaskAssignment extends Entity
 
     protected $endpoint = 'task_assignments/';
     protected $namespace = 'task_assignments';
+
+    public function getEndpoint() {
+        if (isset($this->project_id)) {
+            return sprintf('projects/%s/%s', $this->project_id, $this->endpoint);
+        } else {
+            return $this->endpoint;
+        }
+    }
 }

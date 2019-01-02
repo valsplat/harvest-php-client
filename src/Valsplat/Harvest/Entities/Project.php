@@ -38,4 +38,24 @@ class Project extends Entity
 
     protected $endpoint = 'projects/';
     protected $namespace = 'projects';
+
+    /**
+     * Assign Task to this project
+     * @param array of fillable
+     * @author Joris
+     */
+    public function taskAssignment($attributes = [])
+    {
+        $ta = new TaskAssignment($this->connection, $attributes);
+        $ta->project_id = $this->id;
+        $ta->endpoint = 'projects/{project_id}/'.$ta->endpoint;
+
+        return $ta;
+    }
+
+    public function userAssignment($attributes = [])
+    {
+        $attributes['project_id'] = $this->id;
+        return new UserAssignment($this->connection, $attributes);
+    }
 }

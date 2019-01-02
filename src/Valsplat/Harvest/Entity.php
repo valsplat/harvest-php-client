@@ -25,6 +25,11 @@ abstract class Entity
     protected $endpoint = '';
 
     /**
+     * @var array Meta data returned by API requests
+     */
+    protected $meta = [];
+
+    /**
      * @var string Name of the primary key for this model
      */
     protected $primaryKey = 'id';
@@ -198,12 +203,22 @@ abstract class Entity
     public function collectionFromResult($result)
     {
         $collection = [];
-
         foreach ($result[$this->getNamespace()] as $r) {
             $collection[] = static::makeFromResponse($r);
         }
-
         return $collection;
+    }
+
+    public function metadataFromResult($result)
+    {
+        $this->meta = [
+            'per_page' => $result['per_page'],
+            'total_pages' => $result['total_pages'],
+            'total_entries' => $result['total_entries'],
+            'next_page' => $result['next_page'],
+            'previous_page' => $result['previous_page'],
+            'page' => $result['page'],
+        ];
     }
 
     /**
