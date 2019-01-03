@@ -13,6 +13,7 @@ class Client extends Entity
     use Actions\Deletable;
 
     protected $fillable = [
+        'id',
         'name',
         'is_active',
         'address',

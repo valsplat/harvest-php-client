@@ -13,6 +13,7 @@ class User extends Entity
     use Actions\Deletable;
 
     protected $fillable = [
+        'id',
         'first_name',
         'last_name',
         'email',

@@ -13,6 +13,7 @@ class ExpenseCategory extends Entity
     use Actions\Deletable;
 
     protected $fillable = [
+        'id',
         'name', //	string	required	The name of the expense category.
         'unit_name', //	string	optional	The unit name of the expense category.
         'unit_price', //	decimal	optional	The unit price of the expense category.

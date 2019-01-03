@@ -13,6 +13,7 @@ class ProjectTaskAssignment extends Entity
     use Actions\Deletable;
 
     protected $fillable = [
+        'id',
         'task_id',
         'project_id',
         'is_active',

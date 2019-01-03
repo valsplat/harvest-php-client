@@ -13,6 +13,7 @@ class Task extends Entity
     use Actions\Deletable;
 
     protected $fillable = [
+        'id',
         'name',
         'billable_by_default',
         'default_hourly_rate',
