@@ -23,7 +23,7 @@ trait Listable
         $collection = [];
 
         do {
-            if ($this->meta['next_page']) {
+            if (isset($this->meta['next_page'])) {
                 $params['page'] = $this->meta['next_page'];
             }
 
