@@ -18,9 +18,29 @@ class Harvest
         return new Entities\Client($this->connection, $attributes);
     }
 
+    public function expense($attributes = [])
+    {
+        return new Entities\Expense($this->connection, $attributes);
+    }
+
+    public function expenseCategory($attributes = [])
+    {
+        return new Entities\ExpenseCategory($this->connection, $attributes);
+    }
+
     public function project($attributes = [])
     {
         return new Entities\Project($this->connection, $attributes);
+    }
+
+    public function projectTaskAssignment($attributes = [])
+    {
+        return new Entities\ProjectTaskAssignment($this->connection, $attributes);
+    }
+
+    public function projectUserAssignment($attributes = [])
+    {
+        return new Entities\ProjectUserAssignment($this->connection, $attributes);
     }
 
     public function task($attributes = [])
@@ -28,13 +48,5 @@ class Harvest
         return new Entities\Task($this->connection, $attributes);
     }
 
-    public function taskAssignment($attributes = [])
-    {
-        return new Entities\TaskAssignment($this->connection, $attributes);
-    }
 
-    public function userAssignment($attributes = [])
-    {
-        return new Entities\UserAssignment($this->connection, $attributes);
-    }
 }

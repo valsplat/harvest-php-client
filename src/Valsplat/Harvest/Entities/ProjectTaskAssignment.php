@@ -5,7 +5,7 @@ namespace Valsplat\Harvest\Entities;
 use Valsplat\Harvest\Actions;
 use Valsplat\Harvest\Entity;
 
-class TaskAssignment extends Entity
+class ProjectTaskAssignment extends Entity
 {
     use Actions\Getable;
     use Actions\Listable;
