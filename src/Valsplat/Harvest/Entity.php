@@ -2,7 +2,7 @@
 
 namespace Valsplat\Harvest;
 
-abstract class Entity
+abstract class Entity implements \JsonSerializable
 {
     /**
      * @var Connection
@@ -164,19 +164,11 @@ abstract class Entity
     }
 
     /**
-     * @return string json encoded
-     */
-    public function json()
-    {
-        return json_encode($this->jsonSerialize(), JSON_FORCE_OBJECT);
-    }
-
-    /**
      * Return object for json serialization
      */
     public function jsonSerialize()
     {
-      return (object) $this->getArrayWithNestedObjects();
+        return (object) $this->attributes;
     }
 
     /**
