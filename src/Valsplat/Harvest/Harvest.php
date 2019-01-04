@@ -48,5 +48,13 @@ class Harvest
         return new Entities\Task($this->connection, $attributes);
     }
 
+    public function timeEntry($attributes = [])
+    {
+        return new Entities\TimeEntry($this->connection, $attributes);
+    }
 
+    public function user($attributes = [])
+    {
+        return new Entities\User($this->connection, $attributes);
+    }
 }

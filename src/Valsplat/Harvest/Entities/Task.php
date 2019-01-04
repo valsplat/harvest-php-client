@@ -23,4 +23,15 @@ class Task extends Entity
 
     protected $endpoint = 'tasks/';
     protected $namespace = 'tasks';
+
+    public function activate() {
+      $this->is_active = 1;
+      $this->save();
+    }
+
+    public function archive() {
+      $this->is_active = 0;
+      $this->save();
+    }
+
 }
