@@ -2,7 +2,7 @@
 
 namespace Valsplat\Harvest;
 
-abstract class Entity implements JsonSerializable
+abstract class Entity implements \JsonSerializable
 {
     /**
      * @var Connection
