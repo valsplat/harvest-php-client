@@ -22,6 +22,12 @@ class TimeEntry extends Entity
         'notes',
     ];
 
+    protected $singleNestedEntities = [
+        'user' => User::class,
+        'project' => Project::class,
+        'task' => Task::class,
+    ];
+  
     protected $endpoint = 'time_entries/';
     protected $namespace = 'time_entries';
 }

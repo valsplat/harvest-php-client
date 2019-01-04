@@ -22,6 +22,11 @@ class ProjectTaskAssignment extends Entity
         'budget'
     ];
 
+    protected $singleNestedEntities = [
+        'task' => Task::class,
+        'project' => Project::class,
+    ];
+
     protected $endpoint = 'task_assignments/';
     protected $namespace = 'task_assignments';
 

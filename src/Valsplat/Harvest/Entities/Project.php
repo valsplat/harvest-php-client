@@ -36,6 +36,10 @@ class Project extends Entity
         'ends_on'
     ];
 
+    protected $singleNestedEntities = [
+        'client' => Client::class,
+    ];
+
     protected $endpoint = 'projects/';
     protected $namespace = 'projects';
 

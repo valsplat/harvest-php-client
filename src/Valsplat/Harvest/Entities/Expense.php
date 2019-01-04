@@ -25,6 +25,12 @@ class Expense extends Entity
         'receipt',
     ];
 
+    protected $singleNestedEntities = [
+        'user' => User::class,
+        'project' => Project::class,
+        'expense_category' => ExpenseCategory::class,
+    ];
+
     protected $endpoint = 'expenses/';
     protected $namespace = 'expenses';
 }

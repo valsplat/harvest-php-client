@@ -192,7 +192,23 @@ abstract class Entity implements \JsonSerializable
     public function selfFromResponse($response)
     {
         $this->fill($response);
+
+        foreach ($this->getSingleNestedEntities() as $key => $value) {
+            if (isset($response[$key])) {
+                $entityName = $value;
+                $this->setAttribute($key, new $entityName($this->connection, $response[$key]));
+
+                $foreignKey = "{$key}_id";
+                $this->$foreignKey = $response[$key]['id'];
+            }
+        }
         return $this;
+    }
+
+
+    public function getSingleNestedEntities()
+    {
+        return $this->singleNestedEntities;
     }
 
     /**

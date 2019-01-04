@@ -22,6 +22,11 @@ class ProjectUserAssignment extends Entity
         'budget'
     ];
 
+    protected $singleNestedEntities = [
+        'user' => User::class,
+        'project' => Project::class,
+    ];
+
     protected $endpoint = 'user_assignments/';
     protected $namespace = 'user_assignments';
 
