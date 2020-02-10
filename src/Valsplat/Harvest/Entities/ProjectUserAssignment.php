@@ -18,6 +18,7 @@ class ProjectUserAssignment extends Entity
         'project_id',
         'is_active',
         'is_project_manager',
+        'use_default_rates',
         'hourly_rate',
         'budget'
     ];
